@@ -1,0 +1,70 @@
+version: "1.0.0"
+
+metadata:
+  name: "workout-plan-generator"
+  description: "A flow to generate a workout plan on the basis of physique goal having a gym-split having the exercises acoording to the muscle group being targeted"
+  author: "samarth-kanodia"
+  tags: [workout-plan-generator]
+  private: true
+
+inputs:
+  input1:
+    type: number
+    description: "Desired body fat"
+    required: true
+    example: "5, 7, 10, 15, 20"
+  input2:
+    type: string
+    description: "The kind of physique wanted"
+    required: true
+    example: "lean bulk, cut, shred, lean, dirty bulk"
+  input3:
+    type: number
+    description: "Current weight of the person"
+    required: true
+    example: "20, 30, 45, 56, 78, 89"
+  input4:
+    type: number
+    description: "Weight goal of the person"
+    required: true
+    example: "34, 45, 56, 67, 78"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  The flow will provide me a gym split of exercises and alternatives on the basis of following parameters:
+body fat goal - {desired body fat in %}
+physique goal - {desired physique}
+current weight in kg - {current weight in kg}
+weight goal in kg - {weight goal in kg}
+Tell the number of sets, reps and weights the person needs to train with along with recommendations for recovery
+
+readme: |
+  Personalized Workout Plan Generator
+A flow that creates customized workout plans based on your physique goals, incorporating a gym split with targeted exercises for specific muscle groups.
+
+Features
+Tailored workout plans aligned with individual physique goals
+Gym split routines for optimal muscle group targeting
+Detailed exercise selection for each muscle group
+Explanation of main purpose for each exercise
+Key features and proper form tips for exercises
+Adaptable to various fitness levels and goals
+How to Use
+Input your physique goal (e.g., muscle gain, fat loss, overall fitness)
+Specify your preferred workout frequency (e.g., 3, 4, or 5 days per week)
+Select any equipment limitations or preferences
+Review the generated workout plan, which includes:
+Weekly split routine
+Exercises for each day, grouped by muscle
+Main purpose of each exercise
+Key features and form cues for proper execution
+Adjust the plan as needed based on your schedule and preferences
+Begin your workout routine, tracking progress and adjusting as necessary
+Number of meals per day
+Suggested food items with alternatives
+Main purpose and key features of each food item
+Adjust the plan as needed based on personal preferences or restrictions
+Implement the diet plan and track progress towards your goal
