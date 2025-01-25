@@ -1,0 +1,78 @@
+version: "1.0.0"
+
+metadata:
+  name: "diet-plan-generator"
+  description: "A flow to generate a diet plan on the basis of current weight, height, age, disease if any, level of activity/ calorie burnt per day and the weight goal, so that number of meals along with possible food item with alternatives are provided"
+  author: "samarth-kanodia"
+  tags: [diet-plan-generator]
+  private: true
+
+inputs:
+  input1:
+    type: number
+    description: "Current weight of the person"
+    required: true
+    example: "20, 30, 45, 56, 78, 89"
+  input2:
+    type: number
+    description: "Current height of the person"
+    required: true
+    example: "130, 155, 162, 177, 185, 190"
+  input3:
+    type: number
+    description: "Weight goal of the person"
+    required: true
+    example: "34, 45, 56, 67, 78"
+  input4:
+    type: number
+    description: "The age of that person"
+    required: true
+    example: "19, 23, 40, 48, 56"
+  input5:
+    type: number
+    description: "Any disease that a person has"
+    required: true
+    example: "diabetes, tuberculosis, food allergy, digestive disorders, heart diseases"
+  input6:
+    type: number
+    description: "The calories burnt per day by the person"
+    required: true
+    example: "1500, 2000, 1250"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  The flow will provide me the number of meals with their calorie counts and possible foods and alternatives on the basis of following parameters:
+current weight in kg- {current weight in kg}
+height in cm - {height in cm}
+weight goal in kg - {weight goal in kg}
+age - {age}
+disease - {disease}
+calories burnt per day - {calories burnt per day}
+so as to meet the above requirements involving both macro and micro nutrients
+
+readme: |
+  Personalized Diet Plan Generator
+A smart flow that creates customized diet plans based on individual health metrics, activity levels, and weight goals.
+
+Features
+Tailored meal plans considering current weight, height, and age
+Adaptable to specific health conditions or diseases
+Adjusts for different activity levels and daily calorie burn
+Provides multiple meal options with alternatives
+Includes purpose and key nutritional features for each food item
+Flexible to accommodate various weight goals (loss, gain, or maintenance)
+How to Use
+Input your current weight, height, and age
+Specify any existing health conditions or diseases
+Enter your activity level or average daily calorie burn
+Set your weight goal (lose, gain, or maintain)
+Review the generated diet plan, including:
+Number of meals per day
+Suggested food items with alternatives
+Main purpose and key features of each food item
+Adjust the plan as needed based on personal preferences or restrictions
+Implement the diet plan and track progress towards your goal
+
