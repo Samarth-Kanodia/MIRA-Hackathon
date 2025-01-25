@@ -1,0 +1,55 @@
+version: "1.0.0"
+
+metadata:
+  name: "job-finder"
+  description: "A flow to generate recommendations of companies and roles for jobs through domain, desired location and package"
+  author: "samarth-kanodia"
+  tags: [job-finder]
+  private: true
+
+inputs:
+  input1:
+    type: string
+    description: "Domain"
+    required: true
+    example: "Data Science, Finance, Product Management, Consultancy"
+  input2:
+    type: string
+    description: "Desired location"
+    required: true
+    example: "Kolkata, Mumbai, Delhi, Pune, Gurgaon"
+  input3:
+    type: number
+    description: "Desired package in LPA"
+    required: true
+    example: "12, 15, 20, 35, 46, 80"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  Recommend companies and roles in them for jobs on the basis of:
+Domain - {Domain}
+Desired Location - {Desired Location}
+Desired Package in LPA - {Desired Package in LPA}
+Also, tell the ones that have vacancies
+
+readme: |
+  Job Recommendation Flow
+A streamlined process to generate personalized job recommendations based on user preferences, helping job seekers find suitable companies and roles.
+
+Features
+Customized job recommendations based on domain expertise
+Location-specific job suggestions
+Salary range filtering
+Company and role matching
+User-friendly interface
+How to Use
+Input your professional domain or area of expertise
+Specify your desired work location
+Enter your expected salary range
+Review the generated list of recommended companies and roles
+Explore detailed information about each recommendation
+Save or apply to positions of interest directly through the platform
+This flow simplifies the job search process by providing tailored recommendations that align with your career goals and preferences.
