@@ -29,7 +29,7 @@ inputs:
     required: true
     example: "19, 23, 40, 48, 56"
   input5:
-    type: number
+    type: string
     description: "Any disease that a person has"
     required: true
     example: "diabetes, tuberculosis, food allergy, digestive disorders, heart diseases"
