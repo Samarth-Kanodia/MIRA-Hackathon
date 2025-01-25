@@ -1,0 +1,57 @@
+version: "1.0.0"
+
+metadata:
+  name: "resume-generator"
+  description: "A flow to help one upskill and compete in their fields through learning from the required, latest and additional courses and projects"
+  author: "samarth-kanodia"
+  tags: [resume-generator]
+  private: true
+
+inputs:
+  input1:
+    type: string
+    description: "domain/field of work of the person"
+    required: true
+    example: "Data Science, Product Management, Android Development, Front End Development"
+  input2:
+    type: string
+    description: "Exact role or position of the person"
+    required: true
+    example: "Senior Accountant, Data Engineer, Consultant"
+  input3:
+    type: number
+    description: "Number of years as experience in that role"
+    required: true
+    example: "0, 2, 3, 5, 7, 10"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  Provide courses, certifications and projects on the basis of:
+domain - {domain}
+profession - {profession}
+years of experience - {years of experience}
+along with clickable hyperlinks
+
+readme: |
+  Career Upskilling Flow
+A comprehensive guide to help professionals enhance their skills and stay competitive in their fields through structured learning paths and practical projects.
+
+Features
+Customized learning roadmaps based on industry trends
+Curated list of required and recommended courses
+Integration of latest technologies and methodologies
+Hands-on project suggestions for practical application
+Progress tracking and skill assessment tools
+Networking opportunities with industry experts
+How to Use
+Select your field of expertise or desired career path
+Complete a skill assessment to identify knowledge gaps
+Review the personalized learning roadmap
+Enroll in recommended courses and complete assignments
+Undertake suggested projects to apply new skills
+Track your progress and update your professional profile
+Engage with the community for support and networking
+Repeat the process periodically to stay updated in your field
