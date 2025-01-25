@@ -1,0 +1,75 @@
+version: "1.0.0"
+
+metadata:
+  name: "resume-generator"
+  description: "A flow to generate a resume from details entered by the user"
+  author: "samarth-kanodia"
+  tags: [resume-generator]
+  private: true
+
+inputs:
+  input1:
+    type: number
+    description: "Class 10th percent"
+    required: true
+    example: "23.4, 34.5, 45.6, 56.7, 67.8"
+  input2:
+    type: number
+    description: "Class 12th percent"
+    required: true
+    example: "23.4, 34.5, 45.6, 56.7, 67.8"
+  input3:
+    type: number
+    description: "Current CGPA"
+    required: true
+    example: "3.4, 4.5, 5.6, 6.7, 7.8"
+  input4:
+    type: string
+    description: "Course and Certification"
+    required: true
+    example: "Andrew NG's Machine Learning"
+  input5:
+    type: string
+    description: "Volunteer, research or Internship experience"
+    required: true
+    example: "Research Intern"
+  input6:
+    type: string
+    description: "Letter Of Recommendation"
+    required: true
+    example: "Dr. DK Nauriyal"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  Build a professional resume for a person on the basis of:
+Matriculate percent - {Matriculate precent}
+Intermediate percent - {Intermediate percent}
+CGPA - {Degree CGPA}
+Course and Certification - {Course and Certification}
+Experience - {Experience}
+Letter of Recommendation - {L.O.R}
+Rearrange them in proper order
+
+readme: |
+  Resume Generator Flow
+A streamlined process to create professional resumes based on user-provided information, simplifying the resume creation experience.
+
+Features
+User-friendly input interface for personal and professional details
+Customizable resume templates
+Real-time preview of the generated resume
+Export options in multiple formats (PDF, DOCX)
+Automatic formatting and layout adjustment
+Skills and experience suggestion feature
+How to Use
+Start the Resume Generator Flow
+Enter your personal information (name, contact details, etc.)
+Input your educational background
+Add your work experience and achievements
+List your skills and qualifications
+Choose a resume template from available options
+Review and edit the generated resume in real-time
+Export your completed resume in your preferred format
