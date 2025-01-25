@@ -1,0 +1,63 @@
+version: "1.0.0"
+
+metadata:
+  name: "hairstyle-recommender"
+  description: "A flow to generate hairstyle recommendations based on face shape, hairline type, hair type and hair length"
+  author: "samarth-kanodia"
+  tags: [hairstyle-recommender]
+  private: true
+
+inputs:
+  input1:
+    type: string
+    description: "Face shape"
+    required: true
+    example: "oval, round, square, heart"
+  input2:
+    type: string
+    description: "Hairline type"
+    required: true
+    example: "low, medium, high, widow's peak, uneven, straight"
+  input3:
+    type: string
+    description: "Hair type"
+    required: true
+    example: "straight, wavy, curly, coily"
+  input4:
+    type: number
+    description: "Approx. hair length in cm"
+    required: true
+    example: "3, 4, 5, 6.4, 7.5, 13.1"
+
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  Recommend hairstyle on the basis of:
+face shape - {face shape}
+hairline type - {hairline type}
+hair type - {hair type}
+hair length - {hair length}
+also give some hair care tips
+
+readme: |
+  Hairstyle Recommendation Generator
+A customized flow that suggests hairstyles based on individual facial and hair characteristics.
+
+Features
+Personalized recommendations based on face shape
+Considers hairline type for tailored suggestions
+Accounts for different hair types (straight, wavy, curly, etc.)
+Adapts recommendations to various hair lengths
+Easy-to-use interface for inputting personal characteristics
+How to Use
+Start the Hairstyle Recommendation Generator
+Input your face shape (e.g., oval, round, square, heart)
+Select your hairline type (e.g., low, medium, high)
+Choose your hair type (e.g., straight, wavy, curly, coily)
+Specify your current hair length
+Review the generated hairstyle recommendations
+Explore suggested styles and choose your favorite
+This flow helps users find suitable hairstyles tailored to their unique features, making it easier to decide on a new look that complements their appearance.
+Implement the diet plan and track progress towards your goal
