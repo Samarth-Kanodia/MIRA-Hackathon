@@ -1,10 +1,10 @@
 version: "1.0.0"
 
 metadata:
-  name: "resume-generator"
+  name: "upskill-helper"
   description: "A flow to help one upskill and compete in their fields through learning from the required, latest and additional courses and projects"
   author: "samarth-kanodia"
-  tags: [resume-generator]
+  tags: [upskill-helper]
   private: true
 
 inputs:
