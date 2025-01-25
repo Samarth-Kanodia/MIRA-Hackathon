@@ -1,0 +1,54 @@
+version: "1.0.0"
+
+metadata:
+  name: "skincare-helper"
+  description: "A flow to recommend skincare products and routine on the basis of skin type, skin sensitivity level and skin problems"
+  author: "samarth-kanodia"
+  tags: [skincare-helper]
+  private: true
+
+inputs:
+  input1:
+    type: string
+    description: "Skin type of the person"
+    required: true
+    example: "oily, normal, dry"
+  input2:
+    type: string
+    description: "Skin problem if any"
+    required: true
+    example: "acne, pigmentation, dark spots"
+  input3:
+    type: string
+    description: "Skin sensitivity level"
+    required: true
+    example: "high, moderate, low"
+  
+model:
+  provider: "meta"
+  name: "llama-3.3-70b-instruct"
+
+prompt: |
+  Recommend skincare products and skincare routine on the basis of:
+skin type - {skin type}
+skin sensitivity level - {skin sensitivity level}
+skin problem - {skin problem}
+
+readme: |
+  Personalized Skincare Recommender
+A flow designed to recommend skincare products and routines tailored to individual skin types, sensitivity levels, and specific skin concerns.
+
+Features
+Personalized product recommendations based on skin type
+Customized skincare routines for different sensitivity levels
+Targeted solutions for specific skin problems
+User-friendly interface for easy input and navigation
+Continuously updated product database
+Educational content about skincare ingredients and best practices
+How to Use
+Start the flow and answer questions about your skin type (e.g., oily, dry, combination, normal).
+Indicate your skin sensitivity level (low, medium, high).
+Select any specific skin concerns you have (e.g., acne, aging, hyperpigmentation).
+Review the personalized product recommendations and suggested skincare routine.
+Explore additional information about recommended products and ingredients.
+Save or share your customized skincare plan for future reference.
